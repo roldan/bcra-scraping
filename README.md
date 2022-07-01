@@ -35,7 +35,7 @@ curl 'http://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables_dat
 
 ```
 curl 'http://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables_datos.asp' \
-	--data-raw 'fecha_desde=1999-01-04&fecha_hasta=2022-06-23&primeravez=1&serie=3540' \
+	--data-raw 'fecha_desde=1999-01-04&fecha_hasta=2022-06-23&primeravez=1&serie=1222' \
 | pup 'table.table-BCRA tbody tr json{}' | jq '.[].children | {"date": .[0].text, "value": .[1].text}'
 
 ...
