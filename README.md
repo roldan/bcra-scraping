@@ -9,7 +9,7 @@
 
 ```
 curl 'http://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables_datos.asp' \
-	--data-raw 'fecha_desde=2002-01999-01-042-02&fecha_hasta=2022-06-23&primeravez=1&serie=3540' \
+	--data-raw 'fecha_desde=2002-02-02&fecha_hasta=2022-06-23&primeravez=1&serie=3540' \
 | pup 'table.table-BCRA tbody tr json{}' | jq '.[].children | {"date": .[0].text, "value": .[1].text}'
 
 ...
